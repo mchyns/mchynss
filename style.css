@@ -1,0 +1,111 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    flex-direction: row; /* Default direction */
+}
+.text-container {
+    margin-right: 20px;
+}
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    box-sizing: border-box;
+}
+.navbar div:first-child {
+    color: cyan; /* Warna cyan */
+    font-weight: bold; /* Membuat teks bold */
+}
+.navbar a {
+    color: rgba(255, 255, 255, 0.5); /* Warna memudar */
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+    transition: color 0.3s, border-bottom 0.3s; /* Transisi warna dan garis bawah */
+}
+.navbar a:hover {
+    color: white; /* Warna terang saat hover */
+}
+.navbar a.active {
+    color: white; /* Warna terang saat aktif */
+    border-bottom: 2px solid cyan; /* Garis bawah biru saat aktif */
+}
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid cyan; /* Border biru neon cyan */
+    margin-bottom: 20px;
+    animation: slideInFromRight 1s ease-out forwards;
+    box-shadow: 0 0 8px cyan; /* Menambahkan glow cyan */
+}
+.intro, .subtitle, p {
+    background: linear-gradient(to right, cyan, white); /* Gradasi dari cyan ke putih */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    color: white; /* Warna putih tetap */
+    margin-bottom: 5px;
+}
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: .15em;
+    animation: typing 3.5s steps(30, end) forwards;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack vertically on smaller screens */
+    }
+    .text-container, .profile-pic {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar a {
+        font-size: 14px; /* Smaller font size for smaller screens */
+    }
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
