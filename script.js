@@ -1,5 +1,5 @@
 const subtitle = document.getElementById('subtitle');
-const texts = ['Teknik Informatika', 'Full-Stack Developer', 'Nice To Meet You!']; // Array of texts to type
+const texts = ['Teknik Informatika', 'Tapi Gabisa Ngoding:(', 'Nice To Meet You!']; // Array of texts to type
 let currentTextIndex = 0;
 let currentText = '';
 let index = 0;
