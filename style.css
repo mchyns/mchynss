@@ -1,0 +1,290 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    flex-direction: row; /* Default direction */
+    padding: 100px 20px; /* Tambahkan padding untuk menghindari navbar */
+}
+
+.section {
+    padding: 100px 20px; /* Tambahkan padding untuk menghindari navbar */
+    text-align: center;
+}
+
+.text-container {
+    margin-right: 20px;
+}
+
+.navbar {
+    position: fixed; /* Ubah dari absolute ke fixed */
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    box-sizing: border-box;
+    background-color: black; /* Ubah warna background navbar menjadi hitam */
+    z-index: 1000; /* Pastikan navbar berada di atas konten lainnya */
+}
+
+.navbar div:first-child {
+    color: cyan; /* Warna cyan */
+    font-weight: bold; /* Membuat teks bold */
+}
+
+.navbar a {
+    color: rgba(255, 255, 255, 0.5); /* Warna memudar */
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+    transition: color 0.3s, border-bottom 0.3s; /* Transisi warna dan garis bawah */
+}
+
+.navbar a:hover {
+    color: white; /* Warna terang saat hover */
+}
+
+.navbar a.active {
+    color: white; /* Warna terang saat aktif */
+    border-bottom: 2px solid cyan; /* Garis bawah biru saat aktif */
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Membuat gambar berbentuk bulat */
+    border: 3px solid cyan; /* Border biru neon cyan */
+    margin-left: 20px; /* Jarak antara gambar dan teks */
+    box-shadow: 0 0 8px cyan; /* Menambahkan glow cyan */
+}
+
+.intro, .subtitle, p {
+    background: linear-gradient(to right, cyan, white); /* Gradasi dari cyan ke putih */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    color: white; /* Warna putih tetap */
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: .15em;
+    min-height: 1em; /* Set a minimum height to prevent shifting */
+}
+
+#about {
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    text-align: center; /* Center text */
+}
+
+#about h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#picture h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gallery-pic {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    border: 3px solid cyan; /* Border biru neon cyan */
+    box-shadow: 0 0 8px cyan; /* Menambahkan glow cyan */
+    transition: transform 0.3s;
+}
+
+.gallery-pic:hover {
+    transform: scale(1.1); /* Membesarkan gambar saat hover */
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+.modal-content, #caption {  
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#download-btn {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+}
+
+#download-btn button {
+    background-color: cyan;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack vertically on smaller screens */
+        padding: 50px 20px; /* Adjust padding for smaller screens */
+    }
+    .text-container, .profile-pic {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar a {
+        font-size: 14px; /* Smaller font size for smaller screens */
+    }
+    #about {
+        flex-direction: column; /* Stack vertically on smaller screens */
+    }
+    .modal-content {
+        width: 90%; /* Adjust modal content width for smaller screens */
+    }
+    .prev, .next {
+        font-size: 16px; /* Adjust font size for smaller screens */
+        padding: 12px; /* Adjust padding for smaller screens */
+    }
+    #download-btn button {
+        font-size: 14px; /* Adjust button font size for smaller screens */
+        padding: 8px 16px; /* Adjust button padding for smaller screens */
+    }
+    .gallery-pic {
+        width: 100px; /* Adjust gallery image size for smaller screens */
+        height: 100px; /* Adjust gallery image size for smaller screens */
+    }
+}
+
