@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Website</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <div>mochYunus();</div>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#picture">Picture</a>
+        </div>
+        <div>
+            <a href="https://github.com/mchyns" target="_blank">
+                <img src="hub2.png" alt="GitHub Icon" style="width: 24px; height: 24px;">
+            </a>
+        </div>
+    </div>
+    <section id="home" class="container">
+        <div class="text-container">
+            <p class="intro">Hello World, I'm</p>
+            <h1 class="title">Moch Yunus</h1>
+            <p class="subtitle" id="subtitle"></p>
+            <p>Welcome to My personal website. 👋</p>
+        </div>
+        <img src="ehsan.jpeg" alt="Profile Picture" class="profile-pic">
+    </section>
+    <section id="about" class="container about-container">
+        <div class="text-container">
+            <h2>About Me</h2>
+            <p>Hai semua! aku Moch Yunus, terserah kalian mau manggil aku apa aja.</p>
+            <p>Gak ada yang menarik si sebenernya, aku cuman mahasiswa random, suka foto foto hal random, suka turu, suka main game random juga, suka musik juga si, sama suka apa lagi yak, udh itu doang si kayanya, kalo mau tau lebih banyak tentang aku, mending nanya langsung si, terimakasih sudah mengunjungi web random ku ini.</p>
+        </div>
+    </section>
+    <section id="picture" class="container">
+        <div class="text-container">
+            <h2>Picture</h2>
+        </div>
+        <div class="gallery">
+            <img src="2.jpg" alt="Picture 1" class="gallery-pic">
+            <img src="3.jpg" alt="Picture 2" class="gallery-pic">
+            <img src="4.jpg" alt="Picture 3" class="gallery-pic">
+            <img src="5.jpg" alt="Picture 4" class="gallery-pic">
+            <img src="6.jpg" alt="Picture 5" class="gallery-pic">
+            <img src="7.jpg" alt="Picture 6" class="gallery-pic">
+            <img src="8.jpg" alt="Picture 7" class="gallery-pic">
+            <img src="9.jpg" alt="Picture 8" class="gallery-pic">
+            <img src="10.jpg" alt="Picture 9" class="gallery-pic">
+            <img src="11.jpg" alt="Picture 10" class="gallery-pic">
+            <img src="12.jpg" alt="Picture 11" class="gallery-pic">
+            <img src="13.jpg" alt="Picture 12" class="gallery-pic">
+            <img src="14.jpg" alt="Picture 13" class="gallery-pic">
+            <img src="15.jpg" alt="Picture 14" class="gallery-pic">
+            <img src="16.jpg" alt="Picture 15" class="gallery-pic">
+            <img src="17.jpg" alt="Picture 16" class="gallery-pic">
+            <img src="18.jpg" alt="Picture 17" class="gallery-pic">
+        </div>
+    </section>
+
+    <!-- Modal for enlarged image -->
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <a id="download-btn" href="#" download>
+            <button>Download</button>
+        </a>
+        <img class="modal-content" id="modal-img">
+        <div id="caption"></div>
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
